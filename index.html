@@ -9,10 +9,102 @@
 function myFunction() {
  var obj = { orderDetails: [
   {
-   type:"text",
-   "text":"Tasti",
+   type: "style",
+   weight: "bold",
+  }
+  {
+  type:"text",
+  text:"Tasti",
+ },
+ {
+  type:"text",
+  text:"IN_STORE_PICKUP",
+ },
+  {
+   type: "style",
+   weight: "normal",
   },
- ],};
+    {
+  type:"text",
+  text:"Order#: 577",
+ },
+      {
+  type:"Left-Right",
+  Left:{
+  text: "Name: Steven Aaa"
+  },
+  Right:{
+  text: "Phone:+177783502200
+  }
+ },
+    {
+  type:"text",
+  text:"Placed: 6:06:03 PM",
+ },
+  {
+  "type": "EmptyLines", "number": "1",
+  },
+  {
+  type:"text",
+  text:"Order Details:",
+ },
+    {
+   type: "style",
+   weight: "bold",
+  size: "normal",
+  },
+  {
+  type:"text",
+  text:"1X Falafel Panini",
+ },
+    {
+  type:"text",
+  text:"Salad or Side: French Fries",
+ },
+    {
+  type:"text",
+  text:"3X Chicken Kebab",
+ },
+  {
+  type:"text",
+  text:"DOUBLE MEAT: Double Meat",
+ },
+      {
+  type:"text",
+  text:"Salad or Side: Grape Leaves(Dolamades)",
+ },
+  {
+  type:"text",
+  text:"2X Chicken Shawarma Arabi",
+ },
+    {
+  type:"text",
+  text:"Sub French Fries: Chickpeas",
+ },
+      {
+  type:"text",
+  text:"DOUBLE MEAT: Double Meat",
+ },
+        {
+  type:"text",
+  text:"Make Your Own Gyro Night Kit - S (2 people)",
+ },
+  {
+  type:"text",
+  text:"Add On: Lamb &amp; beef gyro meat",
+ },
+      {
+   type: "style",
+   weight: "normal",
+  size: "small",
+  },
+   {
+  type:"text",
+  text:"Baba Ghannouj Restaurant & Catering",
+  alignment: "center",
+ },
+ ],
+ };
  var myJSON = JSON.stringify(obj);
       Print.postMessage(myJSON);
 }
