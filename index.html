@@ -7,7 +7,12 @@
 <button type="button" onclick="myFunction()">Click Me!</button>
  <script>
 function myFunction() {
- var obj = { name: "John", age: 30, city: "New York" };
+ var obj = { orderDetails: [
+  {
+   type:"text",
+   "text":"Tasti",
+  },
+ ],};
  var myJSON = JSON.stringify(obj);
       Print.postMessage(myJSON);
 }
