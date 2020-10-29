@@ -2,117 +2,147 @@
 <html>
 
 <body>
+
+    <h1>Tastii</h1>
+
+    <div style="width:100%;position:relative" id="yui_3_17_2_1_1603989566379_215">
+        <h1>STEP 1: PICK YOUR AVERAGE TICKET PRICE
+        </h1>
+        <span id="average-amount" style="margin:auto; display:table;font-weight:bold;font-size:32px;"></span>
+        <input id="average-price" type="range" min="15" max="150" value="10" style="width:100%">
+    </div>
+    <div style="width:100%;position:relative">
+        <div style="position:absolute;left:0px;">$15</div>
+        <div style="text-align:center">$82</div>
+        <div style="position:absolute;right:0px;top:0px;">$150</div>
+        <h1>STEP 2: HOW MANY WEEKLY ORDERS DO YOU RECEIVE?
+        </h1>
+        <span id="average-number" style="margin:auto; display:table;font-weight:bold;font-size:32px;"></span>
+        <input id="average-numberinput" type="range" min="10" max="500" value="5" style="width:100%">
+    </div>
+    <div style="width:100%;position:relative">
+        <div style="position:absolute;left:0px;">$10</div>
+        <div style="text-align:center">$250</div>
+        <div style="position:absolute;right:0px;top:0px;">$500</div>
+    </div>
+
+    <h3><i class="fas fa-2x fa-money-bill-wave" aria-hidden="true" style="vertical-align: middle;"></i> <span
+            style="color:#FE7F2D">GrubHub’s</span> commission starts at <a target="_blank">20%*</a>, costing you at
+        least <span id="grubhub" class="inline" style="color:#f2aa46;">
+            $35,100.00</span> a year</h3>
+    <h3><i class="fas fa-2x fa-money-bill-wave" aria-hidden="true" style="vertical-align: middle;"></i> <span
+            style="color:#FE7F2D">EATSTREET’S</span> commission is <a target="_blank">15%*</a>, costing you at least
+        <span id="EATSTREET" class="inline" style="color:#f2aa46;">
+            $2,925.00</span> a year</h3>
+
+    <h3><i class="fas fa-2x fa-money-bill-wave" aria-hidden="true" style="vertical-align: middle;"></i> <span
+            style="color:#FE7F2D">CHOW NOW</span> Starts at <a target="_blank">$150/Month</a>, costing you at least
+        <span id="CHOWCHOW" class="inline" style="color:#f2aa46;">
+            $1,800.00</span> a year</h3>
+
+
+    <h3><i class="fas fa-2x fa-money-bill-wave" aria-hidden="true" style="vertical-align: middle;"></i> <span
+            style="color:#FE7F2D">TOAST</span> commission starts at <a target="_blank">5%*</a>, costing you at least
+        <span id="TOAST" class="inline" style="color:#f2aa46;">
+            $3,900.00</span> a year</h3>
+
+            <h3><i class="fas fa-2x fa-money-bill-wave" aria-hidden="true" style="vertical-align: middle;"></i> <span
+                style="color:#FE7F2D">TASTI</span> Now fee is <a target="_blank">1.5% per order</a>, costing you
+            <span id="TASTI" class="inline" style="color:#f2aa46;">
+                $1,950.00</span></h3>
+
+
     <script>
-        function myFunction() {
-            var obj = {
-                OrderDetails: [
-                    {
-                        type: "style",
-                        weight: "bold",
-                    },
-  {
-                        type: "text",
-                        text: "Tasti",
-                    },
-                    {
-                        type: "text",
-                        text: "IN_STORE_PICKUP",
-                    },
-                    {
-                        type: "style",
-                        weight: "normal",
-                    },
-                    {
-                        type: "text",
-                        text: "Order#: 577",
-                    },
-                    {
-                        type: "Left-Right",
-                        Left: {
-                            text: "Name: Steven Aaa"
-                        },
-                        Right: {
-                            text: "Phone:+177783502200",
-                        }
-                    },
-                    {
-                        type: "text",
-                        text: "Placed: 6:06:03 PM",
-                    },
-                    {
-                        "type": "EmptyLines", "number": "1",
-                    },
-                    {
-                        type: "text",
-                        text: "Order Details:",
-                    },
-                    {
-                        type: "style",
-                        weight: "bold",
-                        size: "normal",
-                    },
-                    {
-                        type: "text",
-                        text: "1X Falafel Panini",
-                    },
-                    {
-                        type: "text",
-                        text: "Salad or Side: French Fries",
-                    },
-                    {
-                        type: "text",
-                        text: "3X Chicken Kebab",
-                    },
-                    {
-                        type: "text",
-                        text: "DOUBLE MEAT: Double Meat",
-                    },
-                    {
-                        type: "text",
-                        text: "Salad or Side: Grape Leaves(Dolamades)",
-                    },
-                    {
-                        type: "text",
-                        text: "2X Chicken Shawarma Arabi",
-                    },
-                    {
-                        type: "text",
-                        text: "Sub French Fries: Chickpeas",
-                    },
-                    {
-                        type: "text",
-                        text: "DOUBLE MEAT: Double Meat",
-                    },
-                    {
-                        type: "text",
-                        text: "Make Your Own Gyro Night Kit - S (2 people)",
-                    },
-                    {
-                        type: "text",
-                        text: "Add On: Lamb &amp; beef gyro meat",
-                    },
-                    {
-                        type: "style",
-                        weight: "normal",
-                        size: "small",
-                    },
-                    {
-                        type: "text",
-                        text: "Baba Ghannouj Restaurant & Catering",
-                        alignment: "center",
-                    },
-                ],
-            };
-            var myJSON = JSON.stringify(obj);
-            Print.postMessage(myJSON);
+        var priceslider = document.getElementById("average-price");
+        var priceoutput = document.getElementById("average-amount");
+        priceoutput.innerHTML = priceslider.value;
+
+        var price = 0;
+        var amount = 0;
+
+        priceslider.oninput = function () {
+            price = this.value;
+            priceoutput.innerHTML = price;
+            grubhubFun();
+            EATSTREETFun();
+            toastFun();
+            tastiFun();
         }
+
+        var amountslider = document.getElementById("average-numberinput");
+        var amountuptput = document.getElementById("average-number");
+        amountuptput.innerHTML = amountslider.value;
+
+        amountslider.oninput = function () {
+            amount = this.value;
+            amountuptput.innerHTML = amount;
+            grubhubFun();
+            EATSTREETFun();
+            toastFun();
+            tastiFun();
+        }
+
+        function EATSTREETFun() {
+
+
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0,
+                //maximumFractionDigits: 0,
+            });
+            var eATSTREETout = document.getElementById("EATSTREET");
+            eATSTREETout.innerHTML = formatter.format(document.getElementById("average-price").value * document.getElementById("average-numberinput").value * 0.15 * 52);
+        }
+
+        function grubhubFun() {
+
+
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0,
+                //maximumFractionDigits: 0,
+            });
+            var grubhubout = document.getElementById("grubhub");
+            grubhubout.innerHTML = formatter.format(document.getElementById("average-price").value * document.getElementById("average-numberinput").value * 0.20 * 52);
+        }
+
+        function toastFun() {
+
+
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0,
+                //maximumFractionDigits: 0,
+            });
+            var grubhubout = document.getElementById("TOAST");
+            grubhubout.innerHTML = formatter.format(document.getElementById("average-price").value * document.getElementById("average-numberinput").value * 0.05 * 52);
+        }
+
+        function tastiFun() {
+
+
+var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+
+    // These options are needed to round to whole numbers if that's what you want.
+    //minimumFractionDigits: 0,
+    //maximumFractionDigits: 0,
+});
+var grubhubout = document.getElementById("TASTI");
+grubhubout.innerHTML = formatter.format(document.getElementById("average-price").value * document.getElementById("average-numberinput").value * 0.015 * 52);
+}
+
     </script>
-
-
-    <h1>Welcome to the awesome tasti platform</h1>
-
-    <button type="button" onclick="myFunction()">Click Me!</button>
-
 </body>
 
 </html>
